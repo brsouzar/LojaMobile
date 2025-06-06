@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1001717187563",
+    "project_id": "lojaflutter-da11f",
+    "storage_bucket": "lojaflutter-da11f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1001717187563:android:2bac43108890ea8bd1cfae",
+        "android_client_info": {
+          "package_name": "br.com.brsolution.loja_virtual"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHMon7Q68cFoMRX_6lAPYGjmgkqMlQIBw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
