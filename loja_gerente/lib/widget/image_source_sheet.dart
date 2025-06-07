@@ -9,12 +9,12 @@ class ImageSourceSheet extends StatelessWidget {
 
   const ImageSourceSheet({required this.onImageSelected});
 
-  void ImageSelected(XFile image) async {
-      CroppedFile? croppedImage = await ImageCropper().cropImage(
+  void ImageSelected(File image) async {
+      File? croppedImage = await ImageCropper.platform.cropImage(
          sourcePath: image.path,
          aspectRatio: CropAspectRatio(ratioX: 1.0, ratioY: 1.0),
-       );
-       onImageSelected(File(croppedImage!.path));
+       ) as File;
+       onImageSelected(croppedImage);
    }
 
   @override
@@ -27,14 +27,16 @@ class ImageSourceSheet extends StatelessWidget {
             TextButton(
                 onPressed: () async {
                  XFile? image = await ImagePicker().pickImage(source: ImageSource.camera);
-                 ImageSelected(image!);
+                 File newfile = File(image!.path);
+                 ImageSelected(newfile);
                 },
                 child: Text('Camera'),
             ),
             TextButton(
               onPressed: () async {
                 XFile? image = await ImagePicker().pickImage(source: ImageSource.gallery);
-                ImageSelected(image!);
+                File newfile = File(image!.path);
+                ImageSelected(newfile);
               },
               child: Text('Galeria'),
             ),
